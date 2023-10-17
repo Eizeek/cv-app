@@ -1,0 +1,56 @@
+.title {
+  color: #26c17e;
+  font-size: 25px;
+  font-family: Open Sans;
+  font-weight: 700;
+  line-height: 30px;
+  word-wrap: break-word;
+  /* margin: 2.5rem 0 2.5rem 0; */
+}
+.exp-content {
+  color: #222935;
+  font-size: 14px;
+  font-family: Open Sans;
+  font-weight: 400;
+  line-height: 21px;
+  word-wrap: break-word;
+}
+
+.exp {
+  display: flex;
+  justify-content: flex-start;
+}
+.exp-date {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  margin-right: 5rem;
+}
+
+.exp-date > h3 {
+  color: #222935;
+  font-size: 16px;
+  font-family: Open Sans;
+  font-weight: 700;
+  line-height: 19.2px;
+  word-wrap: break-word;
+}
+
+.exp-date > p {
+  margin-bottom: 5rem;
+  color: #667081;
+  font-size: 16px;
+  font-family: Open Sans;
+  font-weight: 400;
+  line-height: 19.2px;
+  word-wrap: break-word;
+}
+
+.exp-title {
+  color: #222935;
+  font-size: 16px;
+  font-family: Open Sans;
+  font-weight: 700;
+  line-height: 19.2px;
+  word-wrap: break-word;
+}

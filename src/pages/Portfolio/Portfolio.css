@@ -1,0 +1,14 @@
+.port {
+  width: 66.7%;
+  height: 100%;
+  /* background-color: blueviolet; */
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+
+.sidebar {
+  width: 33.3%;
+  height: inherit;
+  background-color: brown;
+}

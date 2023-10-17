@@ -1,3 +1,11 @@
+.content {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  justify-content: center;
+  align-items: center;
+}
+
 .content > h3 {
   color: white;
   font-size: 45px;
@@ -7,7 +15,7 @@
   word-wrap: break-word;
 }
 
-.content > p:first-child {
+.content > p:nth-child(2) {
   color: white;
   font-size: 25px;
   font-family: Open Sans;
@@ -16,11 +24,33 @@
   word-wrap: break-word;
 }
 
-.content > p:nth-child(2) {
+.content > p:nth-child(3) {
   color: white;
   font-size: 14px;
   font-family: Open Sans;
   font-weight: 400;
   line-height: 21px;
   word-wrap: break-word;
+  text-align: center;
+}
+
+.info-btn {
+  width: 127px;
+  height: 40px;
+  padding: 10px, 20px, 10px, 20px;
+  border-radius: 5px;
+  gap: 10px;
+  background-color: #222935;
+  color: aliceblue;
+  cursor: pointer;
+  color: white;
+  font-size: 16px;
+  font-family: Open Sans;
+  font-weight: 400;
+  line-height: 19.2px;
+  word-wrap: break-word;
+}
+
+.info-btn:hover {
+  background-color: rgb(87, 160, 15);
 }

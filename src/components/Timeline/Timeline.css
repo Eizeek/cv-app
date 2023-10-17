@@ -1,0 +1,68 @@
+.title {
+  color: #26c17e;
+  font-size: 25px;
+  font-family: Open Sans;
+  font-weight: 700;
+  line-height: 30px;
+  word-wrap: break-word;
+  margin: 2.5rem 0 2.5rem 0;
+}
+.edu-content {
+  color: #222935;
+  font-size: 14px;
+  font-family: Open Sans;
+  font-weight: 400;
+  line-height: 21px;
+  word-wrap: break-word;
+}
+
+.edu {
+  display: flex;
+  gap: 2rem;
+}
+.edu-date {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.edu-date > p {
+  margin-bottom: 5rem;
+}
+
+.hr {
+  width: 7rem;
+  height: 0.3rem; /* Change the height to adjust the thickness of the line */
+  border: 0.3rem solid #26c17e;
+  border-radius: 5px;
+  transform: rotate(90deg); /* Rotate the <hr> 90 degrees to make it vertical */
+  transform-origin: 50% 50%; /* Set the rotation origin to the center of the <hr> */
+  margin-bottom: 5rem;
+}
+
+.edu-info {
+  margin-bottom: 2rem;
+  background-color: #eeeeee;
+  padding: 15px;
+  border: solid 1rem #eeeeee;
+  border-radius: 0.6rem;
+}
+
+.edu-title {
+  color: #222935;
+  font-size: 16px;
+  font-family: Open Sans;
+  font-weight: 700;
+  line-height: 19.2px;
+  word-wrap: break-word;
+}
+.timeline-container {
+  height: 30vh;
+  max-height: 80vh;
+  overflow-y: auto;
+}
+
+.timeline-events {
+  padding: 1.3rem;
+}
