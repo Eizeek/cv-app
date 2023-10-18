@@ -3,11 +3,13 @@ import Experience from "../../components/Experience/Experience";
 import Timeline from "../../components/Timeline/Timeline";
 import Port from "../../components/Port/Port";
 import "./Portfolio.css";
+import Address from "../../components/Address/Address";
+import Feedback from "../../components/Feedback/Feedback";
 
 export default function Portfolio() {
   return (
     <>
-      <div className="sidebar">Sidebar</div>
+      {/* <div className="sidebar">Sidebar</div> */}
       <div className="port">
         <Box
           title="About Me"
@@ -16,6 +18,8 @@ export default function Portfolio() {
         <Timeline title="Education" />
         <Experience title="Experience" />
         <Port title="Portfolio" />
+        <Address title="Contacts" />
+        <Feedback title="Feedback" />
       </div>
     </>
   );

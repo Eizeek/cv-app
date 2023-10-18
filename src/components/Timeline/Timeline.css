@@ -66,3 +66,24 @@
 .timeline-events {
   padding: 1.3rem;
 }
+
+/* Target Webkit (Safari/Chrome) browsers */
+.timeline-container::-webkit-scrollbar {
+  width: 0.6rem; /* You can adjust the width of the scrollbar */
+}
+
+/* Change the color of the scrollbar track */
+.timeline-container::-webkit-scrollbar-track {
+  background: #f1f1f1; /* Set the background color */
+}
+
+/* Change the color of the scrollbar thumb (the moving part) */
+.timeline-container::-webkit-scrollbar-thumb {
+  background: #26c17e; /* Set the color of the thumb */
+  border-radius: 0.5rem;
+}
+
+/* Change the color of the scrollbar thumb on hover */
+.timeline-container::-webkit-scrollbar-thumb:hover {
+  background: #4caf50; /* Set the color when hovered */
+}
