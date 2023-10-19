@@ -5,12 +5,14 @@ import Port from "../../components/Port/Port";
 import "./Portfolio.css";
 import Address from "../../components/Address/Address";
 import Feedback from "../../components/Feedback/Feedback";
+import Panel from "../../components/Panel/Panel";
 
 export default function Portfolio() {
   return (
     <>
-      {/* <div className="sidebar">Sidebar</div> */}
-      <div className="port">
+      <Panel />
+
+      <main className="port">
         <Box
           title="About Me"
           content="Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem."
@@ -20,7 +22,7 @@ export default function Portfolio() {
         <Port title="Portfolio" />
         <Address title="Contacts" />
         <Feedback title="Feedback" />
-      </div>
+      </main>
     </>
   );
 }

@@ -1,0 +1,109 @@
+.sidebar {
+  width: 250px;
+  height: 100%;
+  background-color: #222935;
+  position: fixed;
+  top: 0;
+  left: -250px;
+  border-radius: 0.5rem;
+  transition: left 0.3s ease-in-out;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  z-index: 1;
+}
+
+.toggle-button {
+  background: #333;
+  border: none;
+  color: #fff;
+  cursor: pointer;
+  font-size: 16px;
+  padding: 10px;
+  width: 100%;
+}
+
+.toggle-button:hover {
+  background: #555;
+}
+
+ul {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  list-style: none;
+  padding: 0;
+  margin-top: 50px;
+}
+
+li {
+  margin-bottom: 10px;
+}
+
+a {
+  text-decoration: none;
+  color: #667081;
+  font-size: 18px;
+}
+
+a:hover {
+  color: #26c17e;
+}
+
+.sidebar.open {
+  left: 0;
+}
+
+.toggle-button {
+  position: absolute;
+  left: 2.5rem;
+  background: #222935;
+  border: none;
+  color: #fff;
+  cursor: pointer;
+  font-size: 16px;
+  border-radius: 0.5rem;
+  z-index: -1;
+}
+
+.toggle-button:hover {
+  background: #555;
+}
+
+.avatar {
+  width: 8rem;
+  height: 8rem;
+}
+
+.avatar-closed {
+  width: 4rem;
+  height: 4rem;
+}
+
+.icon {
+  color: #26c17e;
+  margin-right: 2rem;
+}
+
+.toggle-icon {
+  margin-left: 13rem;
+}
+
+.goback {
+  color: white;
+  font-size: 14px;
+  font-family: Open Sans;
+  font-weight: 400;
+  line-height: 16.8px;
+  word-wrap: break-word;
+  background-color: #222935;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  margin-top: 10rem;
+}
+
+.goback:hover {
+  color: #26c17e;
+  transition: 300ms ease-in-out;
+}
