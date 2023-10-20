@@ -14,7 +14,7 @@
 }
 
 .toggle-button {
-  background: #333;
+  background: #222935;
   border: none;
   color: #fff;
   cursor: pointer;
@@ -24,7 +24,7 @@
 }
 
 .toggle-button:hover {
-  background: #555;
+  background: #222935;
 }
 
 ul {
@@ -67,17 +67,12 @@ a:hover {
 }
 
 .toggle-button:hover {
-  background: #555;
+  background: #222935;
 }
 
 .avatar {
   width: 8rem;
   height: 8rem;
-}
-
-.avatar-closed {
-  width: 4rem;
-  height: 4rem;
 }
 
 .icon {
@@ -106,4 +101,37 @@ a:hover {
 .goback:hover {
   color: #26c17e;
   transition: 300ms ease-in-out;
+}
+
+@media screen and (max-width: 1200px) {
+  .sidebar {
+    width: 80px;
+    height: 100%;
+    background-color: #222935;
+    position: fixed;
+    top: 0;
+    left: 0;
+    border-radius: 0.5rem;
+    transition: left 0.3s ease-in-out;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    z-index: 1;
+  }
+  a {
+    display: none;
+  }
+
+  .avatar {
+    width: 4rem;
+    height: 4rem;
+  }
+  .toggle-icon {
+    margin-left: 2rem;
+  }
+  .icon {
+    color: #26c17e;
+    margin-left: 2rem;
+    font-size: large;
+  }
 }
