@@ -29,7 +29,7 @@ export default function Address({ title }) {
   return (
     <>
       <div className="address">
-        <h3 className="address__title">Title</h3>
+        <h3 className="address__title">{title}</h3>
         <div className="address__call">
           {call}
           <a aria-label="Chat on WhatsApp" href="https://wa.me/+994513907969">
