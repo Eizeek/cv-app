@@ -1,4 +1,4 @@
-.title {
+.address__title {
   color: #26c17e;
   font-size: 25px;
   font-family: Open Sans;
@@ -14,11 +14,11 @@
   gap: 2rem;
 }
 
-.gitlab > span,
-.github > span,
-.linkedin > span,
-.mail > a,
-.call > a {
+.address__gitlab > span,
+.address__github > span,
+.address__linkedin > span,
+.address__mail a,
+.address__call a {
   color: #222935;
   font-size: 16px;
   font-family: Open Sans;
@@ -29,9 +29,9 @@
   margin-left: 2rem;
 }
 
-.gitlab > a,
-.github > a,
-.linkedin > a {
+.address__gitlab a,
+.address__github a,
+.address__linkedin a {
   margin-left: 3.7rem;
   color: #667081;
   font-size: 14px;
@@ -39,4 +39,4 @@
   font-weight: 400;
   line-height: 19.2px;
   word-wrap: break-word;
-}
+}/*# sourceMappingURL=Address.css.map */

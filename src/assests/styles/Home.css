@@ -1,0 +1,17 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.home {
+  background-image: url(../../assests/images/home-bg.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-color: blueviolet;
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+}/*# sourceMappingURL=Home.css.map */

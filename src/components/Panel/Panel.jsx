@@ -1,4 +1,5 @@
-import "./Panel.css";
+// import "./Panel.css";
+import "../../assests/styles/Panel.scss";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faBars,

@@ -1,7 +1,8 @@
 import React, { useEffect, useState } from "react";
 import portfolioData from "./../../data/portfolio.json";
 import { Link } from "react-router-dom";
-import "./Port.css";
+// import "./Port.css";
+import "../../assests/styles/Port.scss";
 import { useMemo } from "react";
 
 export default function Port({ collapsed, title }) {

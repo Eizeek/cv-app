@@ -1,9 +1,9 @@
-import "./Avatar.css";
+import "../../assests/styles/Avatar.scss";
 
 export default function Avatar() {
   return (
     <>
-      <div className="avatar"></div>
+      <div className="avatar__container"></div>
     </>
   );
 }

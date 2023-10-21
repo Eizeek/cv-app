@@ -1,4 +1,4 @@
-import "./Timeline.css";
+import "../../assests/styles/Timeline.scss";
 
 export default function Timeline({ title }) {
   const TimelineData = [

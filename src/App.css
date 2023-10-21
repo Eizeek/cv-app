@@ -36,3 +36,18 @@
     transform: rotate(360deg);
   }
 }
+
+* {
+  cursor: none;
+}
+
+.cursor {
+  background-image: url(./assests/images/cursor.png);
+  height: 50px;
+  width: 50px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  pointer-events: none;
+  z-index: 9;
+}

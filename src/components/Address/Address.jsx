@@ -1,4 +1,5 @@
-import "./Address.css";
+// import "./Address.css";
+import "../../assests/styles/Address.scss";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faPhone, faEnvelope } from "@fortawesome/free-solid-svg-icons";
 
@@ -27,32 +28,30 @@ const linkedin = (
 export default function Address({ title }) {
   return (
     <>
-      <h3 className="title">{title}</h3>
       <div className="address">
-        <div className="call">
-          {call}{" "}
+        <h3 className="address__title">Title</h3>
+        <div className="address__call">
+          {call}
           <a aria-label="Chat on WhatsApp" href="https://wa.me/+994513907969">
             +994 51 390 79 69
           </a>
         </div>
-        <div className="mail">
-          {mail}{" "}
-          <a href="mailto: azez.karimov@gmail.com">azez.karimov@gmail.com</a>
+        <div className="address__mail">
+          {mail}
+          <a href="mailto:azez.karimov@gmail.com">azez.karimov@gmail.com</a>
         </div>
-        <div className="gitlab">
+        <div className="address__gitlab">
           {gitlab} <span>GitLab</span> <br />
           <a href="https://gitlab.com/azezkarimov">
             https://gitlab.com/azezkarimov
           </a>
         </div>
-        <div className="github">
-          {github}
-          <span>Github</span> <br />
+        <div className="address__github">
+          {github} <span>Github</span> <br />
           <a href="https://github.com/eizeek">https://github.com/eizeek</a>
         </div>
-        <div className="linkedin">
-          {linkedin}
-          <span>Linkedin</span> <br />
+        <div className="address__linkedin">
+          {linkedin} <span>Linkedin</span> <br />
           <a href="https://www.linkedin.com/in/azezkarimov/">
             https://www.linkedin.com/in/azezkarimov/
           </a>

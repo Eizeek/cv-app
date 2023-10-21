@@ -1,6 +1,8 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
-import "./Info.css";
+
+import "../../assests/styles/Info.scss";
+
 export default function Info() {
   const navigate = useNavigate();
 
@@ -9,14 +11,14 @@ export default function Info() {
   };
   return (
     <>
-      <div className="content">
+      <div className="info__content">
         <h3>Aziz Karimov</h3>
         <p>Programmer. Creative. Innovator</p>
         <p>
           Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean
           commodo <br /> ligula eget dolor. Aenean massa. Cum sociis natoque
         </p>
-        <button className="info-btn" onClick={handleButtonClick}>
+        <button className="info__btn" onClick={handleButtonClick}>
           Know More
         </button>
       </div>

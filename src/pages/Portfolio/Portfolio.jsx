@@ -2,7 +2,8 @@ import Box from "../../components/Box/Box";
 import Experience from "../../components/Experience/Experience";
 import Timeline from "../../components/Timeline/Timeline";
 import Port from "../../components/Port/Port";
-import "./Portfolio.css";
+// import "./Portfolio.css";
+import "../../assests/styles/Portfolio.scss";
 import Address from "../../components/Address/Address";
 import Feedback from "../../components/Feedback/Feedback";
 import Panel from "../../components/Panel/Panel";
@@ -10,7 +11,7 @@ import Panel from "../../components/Panel/Panel";
 export default function Portfolio() {
   return (
     <>
-      <Panel />
+      <Panel className="panel" />
 
       <main className="port">
         <Box

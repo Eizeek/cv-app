@@ -1,11 +1,12 @@
-.avatar {
+.avatar__container {
   width: 10.2rem;
   height: 10.2rem;
-  /* background-color: #25a6a6; */
   border-radius: 50%;
   border: 2px solid #fff;
   background-image: url(../../assests/images/avatar.jpg);
   background-repeat: no-repeat;
   background-size: cover;
   margin-top: 12rem;
+
+  margin-left: 8rem;
 }

@@ -1,4 +1,5 @@
-import "./Experience.css";
+// import "./Experience.css";
+import "../../assests/styles/Experience.scss";
 
 export default function Experience({ title }) {
   const experienceData = [
@@ -31,14 +32,14 @@ export default function Experience({ title }) {
     },
   ];
   const events = experienceData.map((data, index) => (
-    <div className="exp" key={index}>
-      <div className="exp-date">
+    <div className="experience__item" key={index}>
+      <div className="experience__date">
         <h3>{data.info.company}</h3>
         <p>{data.date}</p>
       </div>
-      <div className="exp-info">
-        <h3 className="exp-title">{data.info.job}</h3>
-        <p className="exp-content">{data.info.description}</p>
+      <div className="experience__info">
+        <h3 className="experience__title">{data.info.job}</h3>
+        <p className="experience__content">{data.info.description}</p>
       </div>
     </div>
   ));

@@ -1,0 +1,44 @@
+// Address.scss
+
+.address__title {
+  color: #26c17e;
+  font-size: 25px;
+  font-family: Open Sans;
+  font-weight: 700;
+  line-height: 30px;
+  word-wrap: break-word;
+  margin: 2.5rem 0 2.5rem 0;
+}
+
+.address {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.address__gitlab > span,
+.address__github > span,
+.address__linkedin > span,
+.address__mail a,
+.address__call a {
+  color: #222935;
+  font-size: 16px;
+  font-family: Open Sans;
+  font-weight: 700;
+  line-height: 19.2px;
+  word-wrap: break-word;
+  text-decoration: none;
+  margin-left: 2rem;
+}
+
+.address__gitlab a,
+.address__github a,
+.address__linkedin a {
+  margin-left: 3.7rem;
+  color: #667081;
+  font-size: 14px;
+  font-family: Open Sans;
+  font-weight: 400;
+  line-height: 19.2px;
+  word-wrap: break-word;
+}

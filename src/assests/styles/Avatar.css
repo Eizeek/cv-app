@@ -1,0 +1,11 @@
+.avatar__container {
+  width: 10.2rem;
+  height: 10.2rem;
+  border-radius: 50%;
+  border: 2px solid #fff;
+  background-image: url(../../assests/images/avatar.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  margin-top: 12rem;
+  margin-left: 8rem;
+}/*# sourceMappingURL=Avatar.css.map */

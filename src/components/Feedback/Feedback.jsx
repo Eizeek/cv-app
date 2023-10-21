@@ -1,4 +1,4 @@
-import "./Feedback.css";
+import "../../assests/styles/Feedback.scss";
 
 export default function Feedback({ title }) {
   const feedbackData = [
@@ -32,12 +32,14 @@ export default function Feedback({ title }) {
   ];
 
   const events = feedbackData.map((data, index) => (
-    <div className="feed" key={index}>
-      <p className="feed-comment">{data.user.comment}</p>
-      <div className="feed-user">
-        {" "}
-        <img className="feed-pic" src={data.user.pic} alt="" />
-        <span>{data.user.name}</span> <a href="">{data.user.site}</a>
+    <div className="feedback__item" key={index}>
+      <p className="feedback__item-comment">{data.user.comment}</p>
+      <div className="feedback__item_user">
+        <img className="feedback__item_user-pic" src={data.user.pic} alt="" />
+        <span className="feedback__item_user-name">{data.user.name}</span>{" "}
+        <a className="feedback__item_user-site" href={data.user.site}>
+          {data.user.site}
+        </a>
       </div>
     </div>
   ));

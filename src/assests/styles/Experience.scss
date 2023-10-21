@@ -1,0 +1,65 @@
+.title {
+  color: #26c17e;
+  font-size: 25px;
+  font-family: Open Sans;
+  font-weight: 700;
+  line-height: 30px;
+  word-wrap: break-word;
+  /* margin: 2.5rem 0 2.5rem 0; */
+}
+
+.experience__item {
+  display: flex;
+  justify-content: flex-start;
+  margin-bottom: 2rem;
+  color: #222935;
+
+  &__date {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    margin-right: 5rem;
+
+    > h3 {
+      color: #222935;
+      font-size: 16px;
+      font-family: Open Sans;
+      font-weight: 700;
+      line-height: 19.2px;
+      word-wrap: break-word;
+    }
+
+    > p {
+      margin-bottom: 5rem;
+      color: #667081;
+      font-size: 16px;
+      font-family: Open Sans;
+      font-weight: 400;
+      line-height: 19.2px;
+      word-wrap: break-word;
+      margin-top: 1rem;
+    }
+  }
+
+  &__title {
+    color: #222935;
+    font-size: 16px;
+    font-family: Open Sans;
+    font-weight: 700;
+    line-height: 19.2px;
+    word-wrap: break-word;
+  }
+
+  &__content {
+    color: #222935;
+    font-size: 14px;
+    font-family: Open Sans;
+    font-weight: 400;
+    line-height: 21px;
+    word-wrap: break-word;
+  }
+}
+
+.experience__info {
+  margin-left: 5rem;
+}
