@@ -56,5 +56,24 @@
     "@babel/plugin-proposal-private-property-in-object": "^7.21.11",
     "babel-jest": "^29.7.0",
     "miragejs": "^0.1.48"
+  },
+  "jest": {
+    "collectCoverageFrom": [
+      "src/**/*.{js,jsx,ts,tsx}",
+      "!/node_modules/"
+    ],
+    "coverageThreshold": {
+      "global": {
+        "branches": 40,
+        "functions": 40,
+        "lines": 40,
+        "statements": 40
+      }
+    }
+  },
+  "husky": {
+    "hooks": {
+      "pre-push": "npm run test"
+    }
   }
 }

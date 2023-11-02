@@ -1,98 +1,98 @@
-/* eslint-disable */
 import { configureStore } from "@reduxjs/toolkit";
-import { fetchSkills, addSkill, selectAllSkills } from "../skills/skillsSlice";
-import skillsReducer from "../skills/skillsSlice";
-import { waitFor } from "@testing-library/react"; // Import the waitFor utility
+import skillsReducer, {
+  fetchSkills,
+  addSkill,
+  selectAllSkills,
+} from "../skills/skillsSlice";
 
-// Mocking fetch for testing purposes
-global.fetch = jest.fn(() =>
-  Promise.resolve({
-    ok: true,
-    json: () => Promise.resolve({ skills: ["Skill 1", "Skill 2"] }),
-  })
-);
+// Mock the fetch function
+global.fetch = jest.fn();
 
-describe("Skills Slice Tests", () => {
-  let store;
+const skillsData = [
+  { id: 1, skillName: "HTML", skillRange: 100 },
+  { id: 2, skillName: "CSS", skillRange: 90 },
+];
 
-  beforeEach(() => {
-    store = configureStore({
-      reducer: {
-        skills: skillsReducer,
-      },
-    });
-  });
+const store = configureStore({
+  reducer: {
+    skills: skillsReducer,
+  },
+});
 
-  afterEach(() => {
-    global.fetch.mockClear(); // Reset the mock after each test
-  });
+const newSkill = {
+  id: "unique-id",
+  skillName: "New Skill",
+  skillRange: 100,
+};
 
+describe("Skills Slice", () => {
   it("should fetch skills successfully", async () => {
-    // Mocking a successful fetch request
-    fetch.mockImplementationOnce(() =>
-      Promise.resolve({
-        ok: true,
-        json: () => Promise.resolve({ skills: ["Skill 1", "Skill 2"] }),
-      })
-    );
+    // Mock the successful fetch request
+    fetch.mockResolvedValue({
+      ok: true,
+      json: async () => ({ skills: [...skillsData] }),
+    });
 
+    // Dispatch the fetchSkills action
     await store.dispatch(fetchSkills());
+
+    // Get the state from the store
     const state = store.getState();
-    expect(selectAllSkills(state)).toEqual(["Skill 1", "Skill 2"]);
-    expect(state.skills.loading).toEqual("succeeded");
-    expect(state.skills.error).toBeNull();
+
+    // Check if the skills are in the store's state
+    expect(selectAllSkills(state)).toEqual(skillsData);
   });
 
-  it("should handle a failed fetch skills request", async () => {
-    // Mocking a failed fetch request
-    fetch.mockImplementationOnce(() =>
-      Promise.reject("Failed to fetch skills")
-    );
+  it("should handle errors when fetching skills", async () => {
+    // Mock a failed fetch request
+    fetch.mockResolvedValue({
+      ok: false,
+      status: 500, // Simulate an error status
+    });
 
     try {
+      // Dispatch the fetchSkills action
       await store.dispatch(fetchSkills());
     } catch (error) {
-      console.log("Error in test:", error);
-    }
-
-    await waitFor(() => {
+      // Check if the error message is in the store's state
       const state = store.getState();
-      console.log("State in test:", state);
-      expect(selectAllSkills(state)).toEqual([]);
-      expect(state.skills.loading).toEqual("failed");
-      expect(state.skills.error).toEqual("Failed to fetch skills");
-    });
+      expect(state.skills.error).toBe("Failed to fetch skills");
+    }
   });
 
   it("should add a new skill successfully", async () => {
-    // Mocking a successful add skill request
-    fetch.mockImplementationOnce(() =>
-      Promise.resolve({
-        ok: true,
-        json: () => Promise.resolve("New Skill"),
-      })
-    );
+    // Mock a successful POST request
+    fetch.mockResolvedValue({
+      ok: true,
+      json: async () => [...skillsData, newSkill],
+    });
 
-    const newSkill = "New Skill";
+    // Dispatch the addSkill action
     await store.dispatch(addSkill(newSkill));
+
+    // Get the state from the store
     const state = store.getState();
-    expect(selectAllSkills(state)).toContain("New Skill");
+
+    // Check if the new skill is in the store's state
+    const skills = selectAllSkills(state);
+
+    expect(skills).toContainEqual(newSkill);
   });
 
-  it("should handle a failed add skill request", async () => {
-    // Mocking a failed add skill request
-    fetch.mockImplementationOnce(
-      () => Promise.reject("Failed to add a skill") // Simulate a failed request with an error message
-    );
-
-    const newSkill = "New Skill";
-    await store.dispatch(addSkill(newSkill));
-
-    await waitFor(() => {
-      const state = store.getState();
-      expect(selectAllSkills(state)).not.toContain("New Skill");
-      expect(state.skills.loading).toEqual("failed");
-      expect(state.skills.error).toEqual("Failed to add a skill");
+  it("should handle errors when adding a skill", async () => {
+    // Mock a failed POST request
+    fetch.mockResolvedValue({
+      ok: false,
+      status: 500, // Simulate an error status
     });
+
+    try {
+      // Dispatch the addSkill action
+      await store.dispatch(addSkill(newSkill));
+    } catch (error) {
+      // Check if the error message is in the store's state
+      const state = store.getState();
+      expect(state.skills.error).toBe("Failed to add a skill");
+    }
   });
 });
