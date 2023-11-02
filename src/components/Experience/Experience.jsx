@@ -1,36 +1,7 @@
-// import "./Experience.css";
 import "../../assests/styles/Experience.scss";
+import { experienceData } from "../../utils/constants";
 
 export default function Experience({ title }) {
-  const experienceData = [
-    {
-      date: "2013-2014",
-      info: {
-        company: "Google",
-        job: "Front-end developer / php programmer",
-        description:
-          "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor",
-      },
-    },
-    {
-      date: "2012-2013",
-      info: {
-        company: "Twitter",
-        job: "Web developer",
-        description:
-          "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor",
-      },
-    },
-    {
-      date: "2013-2014",
-      info: {
-        company: "Google",
-        job: "Front-end developer / php programmer",
-        description:
-          "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor",
-      },
-    },
-  ];
   const events = experienceData.map((data, index) => (
     <div className="experience__item" key={index}>
       <div className="experience__date">

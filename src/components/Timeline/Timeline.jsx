@@ -1,24 +1,20 @@
+import React, { useEffect } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { fetchEducationData } from "../../redux/slices/education/educationSlice";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faRotate } from "@fortawesome/free-solid-svg-icons";
 import "../../assests/styles/Timeline.scss";
 
 export default function Timeline({ title }) {
-  const TimelineData = [
-    {
-      date: 2001,
-      title: "Title 0",
-      text: "Elit voluptate ad nostrud laboris. Elit incididunt mollit enim enim id id laboris dolore et et mollit. Mollit adipisicing ullamco exercitation ullamco proident aute enim nisi. Dolore eu fugiat consectetur nulla sunt Lorem ex ad. Anim eiusmod do tempor fugiat minim do aliqua amet ex dolore velit.\r\n",
-    },
-    {
-      date: 2000,
-      title: "Title 1",
-      text: "Et irure culpa ad proident labore excepteur elit dolore. Quis commodo elit culpa eiusmod dolor proident non commodo excepteur aute duis duis eu fugiat. Eu duis occaecat nulla eiusmod non esse cillum est aute elit amet cillum commodo.\r\n",
-    },
-    {
-      date: 2012,
-      title: "Title 2",
-      text: "Labore esse tempor nisi non mollit enim elit ullamco veniam elit duis nostrud. Enim pariatur ullamco dolor eu sunt ad velit aute eiusmod aliquip voluptate. Velit magna labore eiusmod eiusmod labore amet eiusmod. In duis eiusmod commodo duis. Exercitation Lorem sint do aliquip veniam duis elit quis culpa irure quis nulla. Reprehenderit fugiat amet sint commodo ex.\r\n",
-    },
-  ];
-  const events = TimelineData.map((data, index) => (
+  const dispatch = useDispatch();
+  const educationData = useSelector((state) => state.education.data);
+  const isLoading = useSelector((state) => state.education.loading);
+
+  useEffect(() => {
+    dispatch(fetchEducationData());
+  }, [dispatch]);
+
+  const events = educationData.map((data, index) => (
     <div className="edu" key={index}>
       <div className="edu-date">
         <p>{data.date}</p>
@@ -35,7 +31,13 @@ export default function Timeline({ title }) {
     <>
       <h3 className="title">{title}</h3>{" "}
       <div className="timeline-container">
-        <div className="timeline-events">{events}</div>
+        {isLoading === "pending" ? (
+          <div className="timeline-loading">
+            <FontAwesomeIcon size="xl" icon={faRotate} spin />
+          </div>
+        ) : (
+          <div className="timeline-events">{events}</div>
+        )}
       </div>
     </>
   );

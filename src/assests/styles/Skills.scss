@@ -1,0 +1,134 @@
+.skills-app {
+  text-align: center;
+  font-family: Arial, sans-serif;
+  margin-left: 1rem;
+}
+
+.skills-app-container {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+.skills {
+  display: flex;
+  flex-direction: column;
+  margin-top: 20px;
+}
+
+.skill {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.ttl {
+  width: 100px;
+}
+
+.bar {
+  background-color: #f0f0f0;
+  height: 2.5rem;
+  width: 100%;
+  margin-left: 10px;
+}
+
+.fill {
+  background-color: #26c17e;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  padding-left: 5px;
+  color: white;
+  font-weight: bold;
+}
+
+.skill-btn {
+  display: inline-flex;
+  height: 40px;
+  padding: 10px 20px;
+  justify-content: center;
+  align-items: center;
+
+  flex-shrink: 0;
+  border-radius: 5px;
+  background: #222935;
+  color: white;
+  font-size: 1rem;
+  border: none;
+  outline: none;
+
+  width: 10rem;
+}
+
+.skill-btn:hover {
+  background: #26c17e;
+}
+
+.skill-inp {
+  display: inline-flex;
+  height: 40px;
+  padding: 10px 17px;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  flex-shrink: 0;
+  border-radius: 5px;
+  outline: none;
+  border: 1px solid #555;
+  width: 20rem;
+}
+
+.edit-btn {
+  display: flex;
+  justify-content: space-between;
+}
+
+.skills-scale {
+  width: 100%;
+  height: 10px;
+  border: 1px solid rgba(102, 112, 129, 1);
+  border-top: 1px solid transparent;
+  position: relative;
+  margin-top: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 30px;
+}
+
+.skills-scale__name {
+  display: inline-block;
+
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 14px;
+  letter-spacing: 0em;
+  text-align: left;
+  color: rgba(102, 112, 129, 1);
+  margin-bottom: 4rem;
+}
+
+.skills-scale::after {
+  content: "";
+  position: absolute;
+  height: 9px;
+  width: calc(100% / 3);
+  top: 0;
+  left: calc(100% / 3);
+  border-left: 1px solid rgba(102, 112, 129, 1);
+  border-right: 1px solid rgba(102, 112, 129, 1);
+}
+
+.skill .skill-btn {
+  display: none;
+}
+
+.skill:hover .skill-btn {
+  display: inline-block;
+}
+
+.error-message {
+  display: flex;
+  margin-top: -1.5rem;
+  color: red;
+}

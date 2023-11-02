@@ -20,8 +20,9 @@ import {
   faAddressBook,
   faComment,
   faArrowLeft,
+  faCircleUp,
 } from "@fortawesome/free-solid-svg-icons";
-import React, { useState } from "react";
+import React, { useState, useRef, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 
 import Avatar from "../../components/Avatar/Avatar";
@@ -29,6 +30,25 @@ import Skills from "../../components/Skills/Skills";
 
 export default function Portfolio() {
   const [isOpen, setIsOpen] = useState(false);
+  const [isMobile, setIsMobile] = useState(false);
+  const educationSectionRef = useRef(null);
+  const port = useRef(null);
+
+  useEffect(() => {
+    if (port.current) {
+      port.current.style.width = isOpen ? "85%" : "100%";
+    }
+  }, [isOpen, port]);
+
+  const scrollToEducation = () => {
+    if (educationSectionRef.current) {
+      educationSectionRef.current.scrollTo({ behavior: "smooth" });
+    }
+  };
+
+  useEffect(() => {
+    scrollToEducation();
+  }, []);
 
   const toggleSidebar = () => {
     setIsOpen(!isOpen);
@@ -39,11 +59,16 @@ export default function Portfolio() {
   const handleButtonClick = () => {
     navigate("/");
   };
+  const scrollToTop = () => {
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth",
+    });
+  };
 
   return (
     <>
       <aside>
-        {" "}
         <div className={`sidebar ${isOpen ? "open" : ""}`}>
           <button className="toggle-button" onClick={toggleSidebar}>
             {isOpen ? (
@@ -53,16 +78,12 @@ export default function Portfolio() {
             )}
           </button>
 
-          {!isOpen ? (
-            <Avatar className="avatar" />
-          ) : (
-            <Avatar className="avatar-closed" />
-          )}
+          <Avatar style={{ width: "8rem", height: "8rem" }} />
 
           <ul>
             <li>
               <FontAwesomeIcon className="icon" icon={faUser} />{" "}
-              <a href="#">About Me</a>
+              <a href="/about">About Me</a>
             </li>
             <li>
               <FontAwesomeIcon className="icon" icon={faUserGraduate} />
@@ -70,44 +91,47 @@ export default function Portfolio() {
             </li>
             <li>
               <FontAwesomeIcon className="icon" icon={faPencil} />{" "}
-              <a href="#">Experience</a>
+              <a href="/experience">Experience</a>
             </li>
             <li>
               <FontAwesomeIcon className="icon" icon={faGem} />{" "}
-              <a href="#">Skills</a>
+              <a href="/skills">Skills</a>
             </li>
             <li>
               <FontAwesomeIcon className="icon" icon={faBriefcase} />{" "}
-              <a href="#">Portfolio</a>
+              <a href="portfolio">Portfolio</a>
             </li>
-            <li>
+            <li onClick={scrollToEducation}>
               <FontAwesomeIcon className="icon" icon={faAddressBook} />
-              <a href="#">Contacts</a>
+              <a>Contacts</a>
             </li>
             <li>
               <FontAwesomeIcon className="icon" icon={faComment} />{" "}
-              <a href="#">Feedbacks</a>
+              <a href="feedbacks">Feedbacks</a>
             </li>
           </ul>
 
           <button className="goback" onClick={handleButtonClick}>
-            {" "}
             <FontAwesomeIcon icon={faArrowLeft} /> Go back
           </button>
         </div>
       </aside>
 
-      <main className="port">
+      <main className="port" ref={port}>
         <Box
           title="About Me"
-          content="Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem."
+          content="As a dedicated Front-End Developer, I specialize in transforming ideas into captivating digital experiences using the power of HTML, CSS, JavaScript, and React. With an eye for design and a heart for innovation, I thrive on bringing seamless interactions to life."
         />
-        <Timeline title="Education" />
+        <Timeline ref={educationSectionRef} title="Education" />
         <Experience title="Experience" />
         <Port title="Portfolio" />
         <Skills title="Skills" />
         <Address title="Contacts" />
         <Feedback title="Feedback" />
+
+        <button onClick={scrollToTop} className="up-btn">
+          <FontAwesomeIcon icon={faCircleUp} />
+        </button>
       </main>
     </>
   );

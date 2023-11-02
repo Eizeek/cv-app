@@ -1,4 +1,3 @@
-// import "./Box.css";
 import "../../assests/styles/Box.scss";
 import React from "react";
 

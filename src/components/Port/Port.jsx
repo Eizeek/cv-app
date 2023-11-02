@@ -1,19 +1,18 @@
 import React, { useEffect, useState } from "react";
-import portfolioData from "./../../data/portfolio.json";
 import { Link } from "react-router-dom";
-// import "./Port.css";
-import "../../assests/styles/Port.scss";
+import "../../assests/styles/Port.css";
 import { useMemo } from "react";
+import { portData } from "../../utils/constants";
 
 export default function Port({ collapsed, title }) {
-  const [data, setData] = useState([]);
+  const [data, setData] = useState(portData);
   const [activeTab, setActiveTab] = useState("all");
 
   useEffect(() => {
-    setData(portfolioData);
-  }, []);
+    setData(data);
+  }, [data]);
 
-  const dispayData = useMemo(() => {
+  const displayData = useMemo(() => {
     return data.filter(
       (item) => item.type === activeTab || activeTab === "all"
     );
@@ -45,7 +44,7 @@ export default function Port({ collapsed, title }) {
         </ul>
 
         <section className="portfolio">
-          {dispayData.map((item) => (
+          {displayData.map((item) => (
             <article key={item.id} className="portfolio-item">
               <div
                 className="image"

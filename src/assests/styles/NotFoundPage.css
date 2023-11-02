@@ -1,0 +1,23 @@
+.app-section_not-found {
+  width: 90%;
+  justify-content: flex-start;
+  align-items: center;
+  min-height: 100vh;
+  height: auto;
+  flex-wrap: wrap;
+}
+.app-section_not-found :is(h2, p, a) {
+  padding: 0 50px;
+}
+.app-section_not-found a {
+  text-decoration: none;
+  color: blue;
+}
+.app-section_not-found div {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  min-height: 60vh;
+}/*# sourceMappingURL=NotFoundPage.css.map */

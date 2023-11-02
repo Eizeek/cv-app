@@ -6,3 +6,65 @@
   top: 0;
   padding: 1rem;
 }
+
+.sidebar.open ~ .port {
+  width: calc(100% - 200px);
+}
+
+.up-btn {
+  display: inline-flex;
+  height: 40px;
+  padding: 10px 20px;
+  justify-content: center;
+  align-items: center;
+  flex-shrink: 0;
+  border-radius: 5px;
+  background: #222935;
+  color: white;
+  font-size: 1rem;
+  border: none;
+  outline: none;
+  z-index: 5;
+  width: 3rem;
+  border-radius: 10rem;
+  cursor: pointer;
+  margin-left: 110rem;
+  margin-bottom: 1rem;
+}
+
+.up-btn:hover {
+  background-color: #26c17e;
+}
+
+.port {
+  width: 100%;
+  transition: width 0.25s ease-in-out;
+}
+
+.sidebar.open {
+  width: 250px;
+}
+
+.sidebar.open ~ .port {
+  width: 75%;
+}
+
+@media screen and (max-width: 1200px) {
+  .avatar {
+    width: 4rem;
+    height: 4rem;
+  }
+  .toggle-icon {
+    margin-left: 2rem;
+  }
+  .icon {
+    color: #26c17e;
+    margin-left: 2rem;
+    font-size: large;
+  }
+
+  .port {
+    width: 100%;
+    transition: width 0.25s ease-in-out;
+  }
+}

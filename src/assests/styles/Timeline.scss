@@ -47,6 +47,7 @@
   padding: 15px;
   border: solid 1rem #eeeeee;
   border-radius: 0.6rem;
+  width: 100%;
 }
 
 .edu-title {
@@ -86,4 +87,12 @@
 /* Change the color of the scrollbar thumb on hover */
 .timeline-container::-webkit-scrollbar-thumb:hover {
   background: #4caf50; /* Set the color when hovered */
+}
+
+.timeline-loading {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  margin-top: 8rem;
+  color: #26c17e;
 }

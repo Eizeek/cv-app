@@ -1,74 +1,74 @@
 import React, { useState, useEffect } from "react";
-import "./Skills.css";
-export default function Skills({ title }) {
-  const [skills, setSkills] = useState([]);
-  const [newSkill, setNewSkill] = useState("");
-  const [newPercentage, setNewPercentage] = useState("");
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faEdit, faRotate } from "@fortawesome/free-solid-svg-icons";
+import { useDispatch, useSelector } from "react-redux";
+import {
+  fetchSkills,
+  addSkill,
+  selectAllSkills,
+} from "../../redux/slices/skills/skillsSlice";
+import "../../assests/styles/Skills.scss";
+import SkillForm from "./Skill/SkillsForm";
+
+const Skills = ({ title }) => {
+  const [showEditForm, setShowEditForm] = useState(false);
+
+  const dispatch = useDispatch();
+  const skills = useSelector(selectAllSkills);
+  const isLoading = useSelector((state) => state.skills.loading);
 
   useEffect(() => {
-    const savedSkills = JSON.parse(localStorage.getItem("skills"));
-    if (savedSkills) {
-      setSkills(savedSkills);
-    }
-  }, []);
+    dispatch(fetchSkills());
+  }, [dispatch]);
 
-  // Save skills to local storage whenever skills change
-  useEffect(() => {
-    localStorage.setItem("skills", JSON.stringify(skills));
-  }, [skills]);
-
-  const addSkill = () => {
-    if (newSkill && newPercentage) {
-      setSkills([...skills, { title: newSkill, percentage: newPercentage }]);
-      setNewSkill("");
-      setNewPercentage("");
-    }
+  const toggleEditForm = () => {
+    setShowEditForm(!showEditForm);
   };
 
-  const deleteSkill = (index) => {
-    const updatedSkills = [...skills];
-    updatedSkills.splice(index, 1);
-    setSkills(updatedSkills);
+  const addSkillToStore = (newSkill) => {
+    dispatch(addSkill(newSkill));
   };
+
+  const editIcon = <FontAwesomeIcon icon={faEdit} />;
 
   return (
     <>
       <h3 className="title">{title}</h3>
+      <div className="edit-btn">
+        <span></span>
+        <button className="skill-btn" onClick={toggleEditForm}>
+          {editIcon} Open Edit
+        </button>
+      </div>
+
+      {showEditForm && <SkillForm onAddSkill={addSkillToStore} />}
       <div className="skills">
-        {skills.map((skill, index) => (
-          <div key={index} className="skill">
-            <div className="bar">
-              <div className="fill" style={{ width: `${skill.percentage}%` }}>
-                {skill.title}
+        {isLoading === "pending" ? (
+          <div className="timeline-loading">
+            <FontAwesomeIcon size="xl" icon={faRotate} spin />
+          </div>
+        ) : (
+          skills.map((skill) => (
+            <div key={skill.id} className="skill">
+              <div className="bar">
+                <div className="fill" style={{ width: `${skill.percentage}%` }}>
+                  {skill.title}
+                </div>
               </div>
             </div>
-            <button className="skill-btn" onClick={() => deleteSkill(index)}>
-              Delete
-            </button>
-          </div>
-        ))}
-      </div>
-      <div className="skills-app">
-        <div>
-          <input
-            className="skill-inp"
-            type="text"
-            placeholder="Skill Title"
-            value={newSkill}
-            onChange={(e) => setNewSkill(e.target.value)}
-          />
-          <input
-            className="skill-inp"
-            type="text"
-            placeholder="Percentage"
-            value={newPercentage}
-            onChange={(e) => setNewPercentage(e.target.value)}
-          />
-          <button className="skill-btn" onClick={addSkill}>
-            Add Skill
-          </button>
-        </div>
+          ))
+        )}
+        <ul>
+          <li className="skills-scale">
+            <span className="skills-scale__name">Beginner</span>
+            <span className="skills-scale__name">Proficient</span>
+            <span className="skills-scale__name">Expert</span>
+            <span className="skills-scale__name">Master</span>
+          </li>
+        </ul>
       </div>
     </>
   );
-}
+};
+
+export default Skills;
