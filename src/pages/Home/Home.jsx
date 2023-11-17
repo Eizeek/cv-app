@@ -7,7 +7,16 @@ export default function Home() {
     <>
       <div className="home">
         <div className="content">
-          <Avatar />
+          <Avatar
+            className="avatar"
+            style={{
+              marginLeft: "8rem",
+              width: "10.5rem",
+              height: "10.5rem",
+              marginBottom: "-10rem",
+              marginTop: "20rem",
+            }}
+          />
           <Info />
         </div>
       </div>
