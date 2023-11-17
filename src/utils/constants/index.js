@@ -1,3 +1,9 @@
+import viva_hospital from "../../assests/images/Viva_Hospital_MS.png";
+import orfarm_multipurpose_ecommerse from "../../assests/images/orfarm_multipurpose_ecommerse.png";
+import stepper_form from "../../assests/images/stepper_form.png";
+import weather_app from "../../assests/images/weather_app.png";
+import epam_pr from "../../assests/images/epam_pr.png";
+
 export const timelineData = [
   {
     id: 1,
@@ -49,7 +55,43 @@ export const experienceData = [
   },
 ];
 
-export const skillsData = [];
+export const skillsData = [
+  {
+    id: 1,
+    skillName: "HTML",
+    skillRange: 100,
+  },
+  {
+    id: 2,
+    skillName: "CSS",
+    skillRange: 90,
+  },
+  {
+    id: 3,
+    skillName: "JavaScript",
+    skillRange: 70,
+  },
+  {
+    id: 4,
+    skillName: "TypeScript",
+    skillRange: 50,
+  },
+  {
+    id: 5,
+    skillName: "React",
+    skillRange: 60,
+  },
+  {
+    id: 6,
+    skillName: "Bootstrap",
+    skillRange: 50,
+  },
+  {
+    id: 7,
+    skillName: "SCSS",
+    skillRange: 60,
+  },
+];
 
 export const portData = [
   {
@@ -91,5 +133,41 @@ export const portData = [
     image:
       "https://s3-alpha-sig.figma.com/img/ff4c/1775/8604bc6106af7dbbf9d4c0238f117d54?Expires=1698624000&Signature=LhNUP9sk90vTs6EKUeie~zTmI~7b2ul3sQqf3cbSeIGGkrrwZLHoUoudjLkkz3ev9POFH4pCN-BJNiPqR-A3U6RflTudrL8GbTkjjfaLaI24Tlu0SBrb9CTiMp0DOhL1B~LDnd7M-NlBlgHyRkPrXWJyUtw7wpIydjM7iCSjvgAU67iX9O29F~JgZ4zl~S0QbPIMk0SZkpoZ42HZdcwMZaAH1isAAmRKILpa6IR6l0zLcaMGcbehKbxF49ZhsCNmWnNIae1X6fG0Hq3c1CGoQagdcmRkZ5j~Sdo2oLYuRERW1WcU8WquikPUlnp~kM6ALTPmlktcU5XNWYWxQCDjMQ__&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4",
     type: "ui",
+  },
+];
+
+export const portfolioData = [
+  {
+    id: 1,
+    title: "Project App Template",
+    description:
+      "Utilized technologies such as JavaScript, Rest API, Web Worker, Webpack, Eslint, CSS, BEM, and Test tools (Mocha and Chai)",
+    url: "https://mastering-javascript-events-ed1f.vercel.app/",
+    image: epam_pr,
+    type: "code",
+  },
+  {
+    id: 2,
+    title: "Vivo Hospital",
+    description: "Utilized technologies: JavaScript, HTML, and CSS",
+    url: "https://hospital-management-system-zb.netlify.app/",
+    image: viva_hospital,
+    type: "ui",
+  },
+  {
+    id: 3,
+    title: "Weather App",
+    description: "Utilized technologies: React and Axios",
+    url: "https://weather-app-zeta-six-25.vercel.app/",
+    image: weather_app,
+    type: "ui",
+  },
+  {
+    id: 4,
+    title: "Orfarm Multipurpose Ecommerse",
+    description: "Utilized technologies such as HTML and CSS",
+    url: "https://orfarm-multipurpose-ecommerse.netlify.app/",
+    image: orfarm_multipurpose_ecommerse,
+    type: "code",
   },
 ];

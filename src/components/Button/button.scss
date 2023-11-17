@@ -1,0 +1,43 @@
+.button {
+    display: flex;
+    align-items: center;
+    padding: 10px, 20px, 10px, 20px;
+    border-radius: 5px;
+    // gap: 10px;
+    background: rgba(34, 41, 53, 1);
+    cursor: pointer;
+    border: transparent;
+    transition: all .3s ease;
+
+    &__icon {
+        // margin-right: 8px;
+        font-size: 1.2rem;
+        color: rgba(255, 255, 255, 1);
+        //   background: rgba(255, 255, 255, 1)
+    }
+
+    &__text {
+        //styleName: Body / norm_2;
+        // font-family: Open Sans;
+        font-size: 16px;
+        font-weight: 400;
+        line-height: 19px;
+        letter-spacing: 0em;
+        text-align: center;
+        color: rgba(255, 255, 255, 1);
+        display: inline-block;
+        margin: auto;
+        transition: all .3s ease;
+    }
+
+    &__text:hover {
+        letter-spacing: 2px;
+        transition: all .3s ease;
+    }
+}
+
+.button:hover {
+    background: rgba(34, 41, 53, 0.8);
+    background-color: var(--title-text-color);
+    transition: all .3s ease;
+}

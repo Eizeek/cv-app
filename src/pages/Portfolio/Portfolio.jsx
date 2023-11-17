@@ -1,7 +1,6 @@
 import Box from "../../components/Box/Box";
 import Experience from "../../components/Experience/Experience";
 import Timeline from "../../components/Timeline/Timeline";
-import Port from "../../components/Port/Port";
 
 import "./Portfolio.scss";
 import Address from "../../components/Address/Address";
@@ -27,10 +26,11 @@ import { useNavigate } from "react-router-dom";
 
 import Avatar from "../../components/Avatar/Avatar";
 import Skills from "../../components/Skills/Skills";
+import { PortfolioInfos } from "../../components/portinfo/Port";
 
 export default function Portfolio() {
   const [isOpen, setIsOpen] = useState(false);
-  const [isMobile, setIsMobile] = useState(false);
+
   const educationSectionRef = useRef(null);
   const port = useRef(null);
 
@@ -135,9 +135,9 @@ export default function Portfolio() {
           title="About Me"
           content="As a dedicated Front-End Developer, I specialize in transforming ideas into captivating digital experiences using the power of HTML, CSS, JavaScript, and React. With an eye for design and a heart for innovation, I thrive on bringing seamless interactions to life."
         />
-        <Timeline ref={educationSectionRef} title="Education" />
+        <Timeline title="Education" />
         <Experience title="Experience" />
-        <Port title="Portfolio" />
+        <PortfolioInfos title="Portfolio" />
         <Skills title="Skills" />
         <Address title="Contacts" />
         <Feedback title="Feedback" />

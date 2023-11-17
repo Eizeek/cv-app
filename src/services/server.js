@@ -1,10 +1,11 @@
 import { createServer } from "miragejs";
-import { timelineData, skillsData } from "../utils/constants/index";
+import { timelineData, skillsData } from "./../utils/constants/index";
 
 export const makeServer = () => {
   return createServer({
     routes() {
       this.namespace = "api";
+      this.urlPrefix = "http://localhost:3000";
 
       this.get(
         "/educations",
@@ -26,8 +27,9 @@ export const makeServer = () => {
         { timing: 1000 }
       );
 
-      this.post("/skills", (request) => {
+      this.post("/skills", (schema, request) => {
         const newSkill = JSON.parse(request.requestBody);
+        schema.db.skills.insert(newSkill);
         skillsData.push(newSkill);
         return skillsData;
       });

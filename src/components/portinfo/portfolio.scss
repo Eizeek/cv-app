@@ -1,0 +1,88 @@
+.tabs {
+  display: flex;
+  flex-direction: row;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 19px;
+  letter-spacing: 0em;
+  text-align: left;
+
+  .active {
+    color: var(--title-text-color);
+  }
+
+  li {
+    //styleName: Body / norm_2;
+    // font-family: Open Sans;
+    color: rgba(34, 41, 53, 1);
+    display: inline-block;
+    margin: 0 5px 0 0;
+    position: relative;
+    text-transform: capitalize;
+    cursor: pointer;
+  }
+
+  li:not(:first-child) {
+    padding: 0 0 0 10px;
+  }
+
+  li:not(:first-child)::after {
+    content: "/";
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+}
+
+.filter-container {
+  display: inline-flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 10px;
+
+  .filter-item {
+    position: relative;
+    width: 308px;
+    height: 190px;
+    overflow: hidden;
+    background-size: cover;
+
+    .portfolio-info {
+      position: absolute;
+      top: 100%;
+      left: 0;
+      transition: all 0.5s ease 0s;
+    }
+  }
+
+  .filter-item:hover {
+    .portfolio-info {
+      transition: all 0.5s ease 0s;
+      top: 0;
+    }
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .filter-container {
+    width: 100%;
+
+    .filter-item {
+      width: 100%;
+      max-width: 254px;
+      height: 156px;
+      background-size: 100% 100%;
+      background-position: center center;
+    }
+  }
+}
+
+.title {
+  color: #26c17e;
+  font-size: 25px;
+  font-family: Open Sans;
+  font-weight: 700;
+  line-height: 30px;
+  word-wrap: break-word;
+  margin: 2.5rem 0 2.5rem 0;
+}

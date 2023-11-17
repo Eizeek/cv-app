@@ -13,8 +13,6 @@ export default function Home() {
               marginLeft: "8rem",
               width: "10.5rem",
               height: "10.5rem",
-              marginBottom: "-10rem",
-              marginTop: "20rem",
             }}
           />
           <Info />
