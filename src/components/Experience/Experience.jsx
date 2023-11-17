@@ -16,8 +16,8 @@ export default function Experience({ title }) {
   ));
 
   return (
-    <>
+    <section id="exp">
       <h3 className="title">{title}</h3> <div>{events}</div>
-    </>
+    </section>
   );
 }

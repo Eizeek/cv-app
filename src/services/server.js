@@ -5,7 +5,6 @@ export const makeServer = () => {
   return createServer({
     routes() {
       this.namespace = "api";
-      this.urlPrefix = "http://localhost:3000";
 
       this.get(
         "/educations",

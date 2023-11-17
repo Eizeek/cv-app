@@ -45,9 +45,9 @@ export default function Feedback({ title }) {
   ));
 
   return (
-    <>
+    <section id="feedback">
       <h3 className="title">{title}</h3>
       <div>{events}</div>;
-    </>
+    </section>
   );
 }

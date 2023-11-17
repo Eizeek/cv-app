@@ -30,26 +30,35 @@ import { PortfolioInfos } from "../../components/portinfo/Port";
 
 export default function Portfolio() {
   const [isOpen, setIsOpen] = useState(false);
-
-  const educationSectionRef = useRef(null);
   const port = useRef(null);
+
+  const activeLinkRef = useRef(null);
+
+  const handleNavLinkClick = (e, targetId) => {
+    
+    e.preventDefault();
+    const targetSection = document.getElementById(targetId);
+    if (targetSection) {
+      window.scrollTo({
+        top: targetSection.offsetTop,
+        behavior: 'smooth',
+      });
+    }
+
+    if (activeLinkRef.current) {
+      activeLinkRef.current.classList.remove('active');
+    }
+
+    e.target.classList.add('active');
+
+    activeLinkRef.current = e.target;
+  };
 
   useEffect(() => {
     if (port.current) {
       port.current.style.width = isOpen ? "85%" : "100%";
     }
   }, [isOpen, port]);
-
-  const scrollToEducation = () => {
-    if (educationSectionRef.current) {
-      educationSectionRef.current.scrollTo({ behavior: "smooth" });
-    }
-  };
-
-  useEffect(() => {
-    scrollToEducation();
-  }, []);
-
   const toggleSidebar = () => {
     setIsOpen(!isOpen);
   };
@@ -83,41 +92,58 @@ export default function Portfolio() {
           <ul>
             <li>
               <FontAwesomeIcon className="icon" icon={faUser} />{" "}
-              <a className="route-list" href="/about">
+              <a className="route-list" href="#"
+              onClick={(e) => handleNavLinkClick(e, 'about')}
+             
+              >
                 About Me
               </a>
             </li>
             <li>
               <FontAwesomeIcon className="icon" icon={faUserGraduate} />
-              <a className="route-list" href="#">
+              <a className="route-list" href="#"
+               onClick={(e) => handleNavLinkClick(e, 'edu')}
+              >
                 Education
               </a>
             </li>
             <li>
               <FontAwesomeIcon className="icon" icon={faPencil} />{" "}
-              <a className="route-list" href="/experience">
+              <a className="route-list"  href="#"
+               onClick={(e) => handleNavLinkClick(e, 'exp')}
+              >
                 Experience
               </a>
             </li>
             <li>
               <FontAwesomeIcon className="icon" icon={faGem} />{" "}
-              <a className="route-list" href="/skills">
+              <a className="route-list" href="#"
+               onClick={(e) => handleNavLinkClick(e, 'skill')}
+              >
                 Skills
               </a>
             </li>
             <li>
               <FontAwesomeIcon className="icon" icon={faBriefcase} />{" "}
-              <a className="route-list" href="portfolio">
+              <a className="route-list"  href="#"
+               onClick={(e) => handleNavLinkClick(e, 'port')}
+              >
+
                 Portfolio
               </a>
             </li>
-            <li onClick={scrollToEducation}>
+            <li>
               <FontAwesomeIcon className="icon" icon={faAddressBook} />
-              <a className="route-list">Contacts</a>
+              <a className="route-list"  href="#"
+               onClick={(e) => handleNavLinkClick(e, 'address')}
+              >Contacts</a>
             </li>
             <li>
               <FontAwesomeIcon className="icon" icon={faComment} />{" "}
-              <a className="route-list" href="feedbacks">
+              <a className="route-list" href="#"
+            onClick={(e) => handleNavLinkClick(e, 'feedback')}
+              
+              >
                 Feedbacks
               </a>
             </li>
@@ -137,8 +163,8 @@ export default function Portfolio() {
         />
         <Timeline title="Education" />
         <Experience title="Experience" />
-        <PortfolioInfos title="Portfolio" />
         <Skills title="Skills" />
+        <PortfolioInfos title="Portfolio" />
         <Address title="Contacts" />
         <Feedback title="Feedback" />
 

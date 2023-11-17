@@ -32,7 +32,7 @@ const Skills = ({ title }) => {
   const editIcon = <FontAwesomeIcon icon={faEdit} />;
 
   return (
-    <>
+    <section id="skill">
       <h3 className="title">{title}</h3>
       <div className="edit-btn">
         <span></span>
@@ -67,7 +67,7 @@ const Skills = ({ title }) => {
           </li>
         </ul>
       </div>
-    </>
+    </section>
   );
 };
 

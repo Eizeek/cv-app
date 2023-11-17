@@ -27,7 +27,7 @@ const linkedin = (
 );
 export default function Address({ title }) {
   return (
-    <>
+    <section id="address">
       <div className="address">
         <h3 className="address__title">{title}</h3>
         <div className="address__call">
@@ -57,6 +57,6 @@ export default function Address({ title }) {
           </a>
         </div>
       </div>
-    </>
+    </section>
   );
 }

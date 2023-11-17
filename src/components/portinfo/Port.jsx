@@ -17,7 +17,7 @@ export const PortfolioInfos = ({ title }) => {
     setData(portfolioData);
   }, []);
   return (
-    <>
+    <section id="port">
       <h3 className="title">{title}</h3>
       <div>
         <ul className="tabs">
@@ -57,6 +57,6 @@ export const PortfolioInfos = ({ title }) => {
           ))}
         </ul>
       </div>
-    </>
+    </section>
   );
 };

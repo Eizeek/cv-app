@@ -28,7 +28,7 @@ export default function Timeline({ title }) {
   ));
 
   return (
-    <>
+    <section id="edu">
       <h3 className="title">{title}</h3>{" "}
       <div className="timeline-container">
         {isLoading === "pending" ? (
@@ -39,6 +39,6 @@ export default function Timeline({ title }) {
           <div className="timeline-events">{events}</div>
         )}
       </div>
-    </>
+    </section>
   );
 }
