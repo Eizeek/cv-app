@@ -1,4 +1,4 @@
-import "../../assests/styles/Box.scss";
+import "./Box.scss";
 import React from "react";
 
 function Box({ title, content }) {

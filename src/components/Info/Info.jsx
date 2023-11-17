@@ -1,7 +1,7 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
 
-import "../../assests/styles/Info.scss";
+import "./Info.scss";
 
 export default function Info() {
   const navigate = useNavigate();

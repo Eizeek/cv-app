@@ -132,3 +132,9 @@
   margin-top: -1.5rem;
   color: red;
 }
+
+@media screen and (max-width: 1200px) {
+  .skills-app {
+    margin-top: 2rem;
+  }
+}

@@ -3,11 +3,11 @@ import Experience from "../../components/Experience/Experience";
 import Timeline from "../../components/Timeline/Timeline";
 import Port from "../../components/Port/Port";
 
-import "../../assests/styles/Portfolio.scss";
+import "./Portfolio.scss";
 import Address from "../../components/Address/Address";
 import Feedback from "../../components/Feedback/Feedback";
 
-import "../../assests/styles/Panel.scss";
+import "../../components/Panel/Panel.scss";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faBars,
@@ -78,41 +78,54 @@ export default function Portfolio() {
             )}
           </button>
 
-          <Avatar style={{ width: "8rem", height: "8rem" }} />
+          <Avatar className="avatar" />
 
           <ul>
             <li>
               <FontAwesomeIcon className="icon" icon={faUser} />{" "}
-              <a href="/about">About Me</a>
+              <a className="route-list" href="/about">
+                About Me
+              </a>
             </li>
             <li>
               <FontAwesomeIcon className="icon" icon={faUserGraduate} />
-              <a href="#">Education</a>
+              <a className="route-list" href="#">
+                Education
+              </a>
             </li>
             <li>
               <FontAwesomeIcon className="icon" icon={faPencil} />{" "}
-              <a href="/experience">Experience</a>
+              <a className="route-list" href="/experience">
+                Experience
+              </a>
             </li>
             <li>
               <FontAwesomeIcon className="icon" icon={faGem} />{" "}
-              <a href="/skills">Skills</a>
+              <a className="route-list" href="/skills">
+                Skills
+              </a>
             </li>
             <li>
               <FontAwesomeIcon className="icon" icon={faBriefcase} />{" "}
-              <a href="portfolio">Portfolio</a>
+              <a className="route-list" href="portfolio">
+                Portfolio
+              </a>
             </li>
             <li onClick={scrollToEducation}>
               <FontAwesomeIcon className="icon" icon={faAddressBook} />
-              <a>Contacts</a>
+              <a className="route-list">Contacts</a>
             </li>
             <li>
               <FontAwesomeIcon className="icon" icon={faComment} />{" "}
-              <a href="feedbacks">Feedbacks</a>
+              <a className="route-list" href="feedbacks">
+                Feedbacks
+              </a>
             </li>
           </ul>
 
-          <button className="goback" onClick={handleButtonClick}>
-            <FontAwesomeIcon icon={faArrowLeft} /> Go back
+          <button className={"goback"} onClick={handleButtonClick}>
+            <FontAwesomeIcon icon={faArrowLeft} />{" "}
+            <span className="text-goback">Go back</span>
           </button>
         </div>
       </aside>

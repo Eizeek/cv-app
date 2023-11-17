@@ -8,3 +8,12 @@
   background-size: cover;
   margin-top: 12rem;
 }
+
+@media screen and (max-width: 1200px) {
+  .avatar__container {
+    width: 2.5rem;
+    height: 2.5rem;
+    position: relative;
+    bottom: 10rem;
+  }
+}

@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import "../../../assests/styles/Skills.scss";
+import "../Skills.scss";
 import { validationSchema } from "../../../validation/validationSchema";
 
 const SkillForm = ({ onAddSkill }) => {

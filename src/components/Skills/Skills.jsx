@@ -7,7 +7,7 @@ import {
   addSkill,
   selectAllSkills,
 } from "../../redux/slices/skills/skillsSlice";
-import "../../assests/styles/Skills.scss";
+import "./Skills.scss";
 import SkillForm from "./Skill/SkillsForm";
 
 const Skills = ({ title }) => {

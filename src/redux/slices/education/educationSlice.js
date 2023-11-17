@@ -26,7 +26,6 @@ const educationSlice = createSlice({
       .addCase(fetchEducationData.fulfilled, (state, action) => {
         state.loading = "succeeded";
         state.data = action.payload;
-        state.error = null;
       })
       .addCase(fetchEducationData.rejected, (state, action) => {
         state.loading = "failed";

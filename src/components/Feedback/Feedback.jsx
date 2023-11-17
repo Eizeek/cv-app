@@ -1,4 +1,4 @@
-import "../../assests/styles/Feedback.scss";
+import "./Feedback.scss";
 
 export default function Feedback({ title }) {
   const feedbackData = [

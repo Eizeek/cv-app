@@ -1,4 +1,4 @@
-import "../../assests/styles/Avatar.scss";
+import "./Avatar.scss";
 
 export default function Avatar() {
   return (

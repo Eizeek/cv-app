@@ -1,4 +1,4 @@
-import "../../assests/styles/Experience.scss";
+import "./Experience.scss";
 import { experienceData } from "../../utils/constants";
 
 export default function Experience({ title }) {

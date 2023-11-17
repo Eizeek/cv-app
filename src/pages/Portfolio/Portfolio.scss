@@ -50,10 +50,6 @@
 }
 
 @media screen and (max-width: 1200px) {
-  .avatar {
-    width: 4rem;
-    height: 4rem;
-  }
   .toggle-icon {
     margin-left: 2rem;
   }
@@ -62,9 +58,18 @@
     margin-left: 2rem;
     font-size: large;
   }
+  .sidebar.open {
+    width: 3rem;
+  }
+
+  .sidebar.open ~ .port {
+    width: 40%;
+  }
 
   .port {
     width: 100%;
     transition: width 0.25s ease-in-out;
   }
+
+ 
 }

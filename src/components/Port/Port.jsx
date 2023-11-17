@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
-import "../../assests/styles/Port.css";
+import "./Port.scss";
 import { useMemo } from "react";
 import { portData } from "../../utils/constants";
 

@@ -1,5 +1,5 @@
 // import "./Address.css";
-import "../../assests/styles/Address.scss";
+import "./Address.scss";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faPhone, faEnvelope } from "@fortawesome/free-solid-svg-icons";
 

@@ -3,7 +3,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { fetchEducationData } from "../../redux/slices/education/educationSlice";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faRotate } from "@fortawesome/free-solid-svg-icons";
-import "../../assests/styles/Timeline.scss";
+import "./Timeline.scss";
 
 export default function Timeline({ title }) {
   const dispatch = useDispatch();

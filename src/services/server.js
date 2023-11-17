@@ -26,7 +26,7 @@ export const makeServer = () => {
         { timing: 1000 }
       );
 
-      this.post("/skills", (schema, request) => {
+      this.post("/skills", (request) => {
         const newSkill = JSON.parse(request.requestBody);
         skillsData.push(newSkill);
         return skillsData;
