@@ -58,38 +58,38 @@ export const experienceData = [
 export const skillsData = [
   {
     id: 1,
-    skillName: "HTML",
-    skillRange: 100,
+    title: "HTML",
+    Range: "100",
   },
   {
     id: 2,
-    skillName: "CSS",
-    skillRange: 90,
+    title: "CSS",
+    Range: "90",
   },
   {
     id: 3,
-    skillName: "JavaScript",
-    skillRange: 70,
+    title: "JavaScript",
+    Range: "70",
   },
   {
     id: 4,
-    skillName: "TypeScript",
-    skillRange: 50,
+    title: "TypeScript",
+    Range: "50",
   },
   {
     id: 5,
-    skillName: "React",
-    skillRange: 60,
+    title: "React",
+    Range: "60",
   },
   {
     id: 6,
-    skillName: "Bootstrap",
-    skillRange: 50,
+    title: "React Native",
+    Range: "30",
   },
   {
     id: 7,
-    skillName: "SCSS",
-    skillRange: 60,
+    title: "SCSS",
+    Range: "80",
   },
 ];
 

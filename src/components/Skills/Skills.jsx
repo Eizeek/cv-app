@@ -51,7 +51,7 @@ const Skills = ({ title }) => {
           skills.map((skill) => (
             <div key={skill.id} className="skill">
               <div className="bar">
-                <div className="fill" style={{ width: `${skill.percentage}%` }}>
+                <div className="fill" style={{ width: `${skill.Range}%` }}>
                   {skill.title}
                 </div>
               </div>

@@ -38,6 +38,7 @@ ul {
 
 li {
   margin-bottom: 10px;
+  cursor: pointer;
 }
 
 a {
@@ -46,7 +47,8 @@ a {
   font-size: 18px;
 }
 
-a:hover, .active {
+a:hover,
+.active {
   color: #26c17e;
 }
 

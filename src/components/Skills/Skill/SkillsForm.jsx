@@ -14,7 +14,7 @@ const SkillForm = ({ onAddSkill }) => {
         { abortEarly: false }
       )
       .then(() => {
-        onAddSkill({ title: newSkill, percentage: newPercentage });
+        onAddSkill({ title: newSkill, Range: newPercentage });
         setNewSkill("");
         setNewPercentage("");
         setErrors({ skillName: "", skillPercentage: "" });

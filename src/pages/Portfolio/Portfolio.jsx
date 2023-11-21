@@ -35,21 +35,20 @@ export default function Portfolio() {
   const activeLinkRef = useRef(null);
 
   const handleNavLinkClick = (e, targetId) => {
-    
     e.preventDefault();
     const targetSection = document.getElementById(targetId);
     if (targetSection) {
       window.scrollTo({
         top: targetSection.offsetTop,
-        behavior: 'smooth',
+        behavior: "smooth",
       });
     }
 
     if (activeLinkRef.current) {
-      activeLinkRef.current.classList.remove('active');
+      activeLinkRef.current.classList.remove("active");
     }
 
-    e.target.classList.add('active');
+    e.target.classList.add("active");
 
     activeLinkRef.current = e.target;
   };
@@ -90,60 +89,45 @@ export default function Portfolio() {
           <Avatar className="avatar" />
 
           <ul>
-            <li>
+            <li onClick={(e) => handleNavLinkClick(e, "about")}>
               <FontAwesomeIcon className="icon" icon={faUser} />{" "}
-              <a className="route-list" href="#"
-              onClick={(e) => handleNavLinkClick(e, 'about')}
-             
-              >
+              <a className="route-list" href="#">
                 About Me
               </a>
             </li>
-            <li>
+            <li onClick={(e) => handleNavLinkClick(e, "edu")}>
               <FontAwesomeIcon className="icon" icon={faUserGraduate} />
-              <a className="route-list" href="#"
-               onClick={(e) => handleNavLinkClick(e, 'edu')}
-              >
+              <a className="route-list" href="#">
                 Education
               </a>
             </li>
-            <li>
+            <li onClick={(e) => handleNavLinkClick(e, "exp")}>
               <FontAwesomeIcon className="icon" icon={faPencil} />{" "}
-              <a className="route-list"  href="#"
-               onClick={(e) => handleNavLinkClick(e, 'exp')}
-              >
+              <a className="route-list" href="#">
                 Experience
               </a>
             </li>
-            <li>
+            <li onClick={(e) => handleNavLinkClick(e, "skill")}>
               <FontAwesomeIcon className="icon" icon={faGem} />{" "}
-              <a className="route-list" href="#"
-               onClick={(e) => handleNavLinkClick(e, 'skill')}
-              >
+              <a className="route-list" href="#">
                 Skills
               </a>
             </li>
-            <li>
+            <li onClick={(e) => handleNavLinkClick(e, "port")}>
               <FontAwesomeIcon className="icon" icon={faBriefcase} />{" "}
-              <a className="route-list"  href="#"
-               onClick={(e) => handleNavLinkClick(e, 'port')}
-              >
-
+              <a className="route-list" href="#">
                 Portfolio
               </a>
             </li>
-            <li>
+            <li onClick={(e) => handleNavLinkClick(e, "address")}>
               <FontAwesomeIcon className="icon" icon={faAddressBook} />
-              <a className="route-list"  href="#"
-               onClick={(e) => handleNavLinkClick(e, 'address')}
-              >Contacts</a>
+              <a className="route-list" href="#">
+                Contacts
+              </a>
             </li>
-            <li>
+            <li onClick={(e) => handleNavLinkClick(e, "feedback")}>
               <FontAwesomeIcon className="icon" icon={faComment} />{" "}
-              <a className="route-list" href="#"
-            onClick={(e) => handleNavLinkClick(e, 'feedback')}
-              
-              >
+              <a className="route-list" href="#">
                 Feedbacks
               </a>
             </li>
